@@ -42,16 +42,26 @@ public class MainClass {
         /*Fin Roles de prueba*/
 
 
-        Usuario mati = new Usuario("Mati");
+        Usuario mati = new Usuario("Mati", "pass");
         mati.addRol(rol1);
         mati.addRol(rolComp2);
         mati.addRol(rolComp3);
 
         Scanner scan = new Scanner(System.in);
         String nombre;
+        String pass;
 
-        System.out.println("Ingrese usuario: ");
-        nombre = scan.next();
+        do {
+            System.out.println("Ingrese usuario: ");
+            nombre = scan.next();
+
+        } while (!nombre.equals(mati.getNombre()));
+
+        do{
+            System.out.println("Ingrese password: ");
+            pass = scan.next();
+
+        } while (!pass.equals(mati.getPass()));
 
         Botones botones = new Botones();
         botones.showBotones(mati);

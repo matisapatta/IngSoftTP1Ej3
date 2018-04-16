@@ -3,11 +3,13 @@ public class Usuario {
 
     private Rol rol;
     private String nombre;
+    private String pass;
 
 
 
-    public Usuario(String nombre){
+    public Usuario(String nombre, String pass){
         this.nombre = nombre;
+        this.pass = pass;
         rol = new RolCompuesto();
     }
 
@@ -16,6 +18,9 @@ public class Usuario {
     }
     public String getNombre(){
         return this.nombre;
+    }
+    public String getPass() {
+        return this.pass;
     }
 
     public void addRol(Rol rol){
